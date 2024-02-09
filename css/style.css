@@ -1,0 +1,229 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    color: #edf5e1;
+}
+img{
+    width: 100%;
+    object-position: center;
+    object-fit: contain;
+}
+
+
+.container{
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to left, rgb(92, 219, 149), rgb(143, 227, 175));
+}
+.container main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+ #countries{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+#countries .country-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(78 209 138);
+    border-radius: .25rem;
+    background-image: linear-gradient(to left, rgb(78 209 138), rgb(106 197 141));
+    position: relative;
+}
+
+#countries .country-card .card-title{
+    width: 100%;
+    height: auto;
+}
+#countries .country-card .card-title .country-count{
+    font-family: 'Abril Fatface', serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #379683;
+}
+.card-flag {
+    height: 150px;
+    width: 80%;
+    margin: 0 auto;
+}
+#countries .country-card .card-flag img {
+    max-height: 130px;
+    max-width: 230px;
+}
+#countries .country-card .card-information{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    align-content: space-around;
+    height: 120px;
+}
+#countries .country-card .card-information h2{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+#countries .country-card .card-information .btn-btn{
+    padding: 15px 20px;
+    border-radius: .25rem;
+    margin: 0 auto;
+    width: 75%;
+    background-color: #05386B;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #edf5e1;
+    font-size: 1.1rem;
+}
+
+#modal {
+    display: none;
+    flex-flow: column wrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-image: linear-gradient(to left, rgb(5, 56, 107), rgb(13, 61, 111), rgb(21, 67, 115), rgb(27, 72, 118), rgb(34, 78, 122));
+    border: 1px solid rgb(5, 56, 107);
+    width: 70%;
+    height: 500px;
+    border-radius: 0.35rem;
+    box-shadow: 0 3px 8px 0 rgba(5,56,107,.4);
+}
+#modal .action-box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1% 0;
+}
+#modal .action-box .icon-box #close{
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#modal .modal-content{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0;
+    top: 45px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#modal .modal-content #modal-content{
+    width: 50%;
+    height:340px;
+}
+#modal .modal-content #modal-content h4 {
+    font-size: x-large;
+    font-weight: 700;
+    padding: 2% 0;
+    text-transform: capitalize;
+}
+#modal .modal-content #modal-content p{
+    font-size: larger;
+    font-weight: 300;
+    padding: 8px 0;
+}
+#modal .modal-content #modal-flag{
+    width: 35%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div#cancel-section {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 80%;
+    transform: translate(0,-5%);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button#btn-cancel {
+    padding: 2% 10%;
+    font-size: 1.6rem;
+    border-radius: 0.28rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(2, 44, 84);
+    box-shadow: 0 3px 5px 0 rgba(2,33,84,.3);
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(237, 245, 224);
+}
+
+#confirm-cancelation{
+    width: 50%;
+    height: 350px;
+    background-image: linear-gradient(to left, #d4ddc5, #d4dbc8, #d4d8ca, #d4d6cd, #d3d4d0);
+    border-radius: .25rem;
+    z-index: 9;
+    margin: 0 auto;
+    box-shadow: 0 3px 5px 0 rgba(2,33,84,.3);
+    transition: all 150ms ease-in-out;
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#confirm-text{
+    font-size: xx-large;
+    text-transform: capitalize;
+    padding: 2% 0;
+    color: rgb(2, 44, 84);
+}
+#confirm-cancelation #btn-container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#confirm-cancelation #btn-container .btn {
+    padding: 15px 0;
+    width: 25%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    color: rgb(237, 245, 224);
+}
+.btn:nth-child(1){
+    background-image: linear-gradient(to left, #ec3732, #e1322d, #d62d28, #cc2723, #c1221e);
+}
+.btn:nth-child(2){
+    background-image: linear-gradient(to left, #4ed18a, #52d38d, #55d68f, #59d892, #5cdb95);
+}
